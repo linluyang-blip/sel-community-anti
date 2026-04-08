@@ -252,7 +252,7 @@ section {
   transition: all 0.3s ease;
 }
 
-.timeline-item:nth-child(even):::after {
+.timeline-item:nth-child(even)::after {
   left: -12px;
 }
 
