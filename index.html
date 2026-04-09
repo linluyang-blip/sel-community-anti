@@ -4,9 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description" content="關注教師在高壓教學環境中的情緒調適與人際支持，透過運動體驗與專業講座，提升自我覺察與社會情緒素養。" />
+    <meta property="og:title" content="SEL 運動共學社群 | 高師大" />
+    <meta property="og:description" content="關注教師在高壓教學環境中的情緒調適與人際支持，提升自我覺察與教育創新。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.jpg" /> 
+
+    <!-- Google Fonts Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <title>SEL 運動共學社群 | 高師大</title>
   </head>
   <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
     <nav>
       <div class="logo">SEL 運動共學社群</div>
       <ul>
@@ -20,23 +38,28 @@
       <div class="hero-badge">國立高雄師範大學南區社會情緒學習與教育創新中心</div>
       <h1>SEL 教師專業發展與實踐</h1>
       <p>關注教師在高壓教學環境中的情緒調適與人際支持，透過運動體驗與專業講座，提升自我覺察與社會情緒素養。</p>
+      
+      <div style="margin-top: 1.5rem; animation: fadeIn 1s ease-out 0.6s both;">
+        <a href="#about" class="btn btn-primary">了解理念</a>
+        <a href="#schedule" class="btn btn-outline">活動時程</a>
+      </div>
     </header>
 
     <section id="about">
       <h2 class="section-title">社群目標與理念</h2>
       <div class="grid-3">
         <div class="card">
-          <div class="card-icon">🧘‍♂️</div>
+          <div class="card-icon"><i class="ph ph-flower-lotus"></i></div>
           <h3>自我覺察與情緒調適</h3>
           <p>透過情緒調節策略、呼吸放鬆及桌球/羽球運動體驗，引導教師覺察壓力來源，培養自我照顧與調適能力。</p>
         </div>
         <div class="card">
-          <div class="card-icon">🤝</div>
+          <div class="card-icon"><i class="ph ph-handshake"></i></div>
           <h3>人際互動與支持關係</h3>
           <p>藉由人際互動講座、合作型運動活動與經驗分享，促進教師溝通與支持能力，建立正向同儕支持系統。</p>
         </div>
         <div class="card">
-          <div class="card-icon">🌱</div>
+          <div class="card-icon"><i class="ph ph-plant"></i></div>
           <h3>落實正向教學氛圍</h3>
           <p>採「專業學習＋體驗實作＋反思交流」模式，將 SEL 落實於日常生活與教學情境中，提升身心健康。</p>
         </div>
@@ -113,6 +136,24 @@
         </div>
       </div>
     </section>
+
+    <!-- 聯絡表單 -->
+    <section id="contact">
+      <h2 class="section-title">加入我們</h2>
+      <div class="card" style="max-width: 600px; margin: 0 auto; text-align: left;">
+        <form action="https://formspree.io/f/你的專屬碼" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+          <input type="text" name="name" placeholder="您的姓名" required style="padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: inherit;">
+          <input type="email" name="email" placeholder="您的 Email" required style="padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: inherit;">
+          <textarea name="message" placeholder="想對我們說的話..." rows="4" required style="padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: inherit; resize: vertical;"></textarea>
+          <button type="submit" class="btn btn-primary" style="align-self: center; margin-top: 0.5rem; border: none; cursor: pointer;">送出信件</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 高師大南區社會情緒學習與教育創新中心. All Rights Reserved.</p>
+    </footer>
 
     <script type="module" src="/main.js"></script>
   </body>

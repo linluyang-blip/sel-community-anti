@@ -20,22 +20,20 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Select cards and timeline items for staggered animation
-  const cards = document.querySelectorAll('.card');
-  cards.forEach((el, index) => {
+  const animatedElements = document.querySelectorAll('.card, .timeline-item, .member-card');
+  
+  animatedElements.forEach((el, index) => {
     el.dataset.delay = (index % 3) * 150; 
     observer.observe(el);
   });
+});
 
-  const timelineItems = document.querySelectorAll('.timeline-item');
-  timelineItems.forEach((el, index) => {
-    el.dataset.delay = 100;
-    observer.observe(el);
-  });
-
-  const memberCards = document.querySelectorAll('.member-card');
-  memberCards.forEach((el, index) => {
-    el.dataset.delay = (index % 4) * 150;
-    observer.observe(el);
-  });
+window.addEventListener('scroll', () => {
+  const scrollProgress = document.querySelector('.scroll-progress');
+  if (scrollProgress) {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    scrollProgress.style.width = scrolled + '%';
+  }
 });
