@@ -37,3 +37,36 @@ window.addEventListener('scroll', () => {
     scrollProgress.style.width = scrolled + '%';
   }
 });
+
+// 使用 AJAX 背景送出表單，避免跳轉到 FormSubmit 預設的英文感謝畫面
+const contactForm = document.querySelector('#contact form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = '傳送中...';
+    btn.disabled = true;
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('表單已成功送出！我們會盡快與您聯繫。');
+        contactForm.reset();
+      } else {
+        alert('發生錯誤，請稍後再試。');
+      }
+    })
+    .catch(error => {
+      alert('發生錯誤，請稍後再試。');
+    })
+    .finally(() => {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
+  });
+}
