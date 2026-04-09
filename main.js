@@ -70,3 +70,32 @@ if (contactForm) {
     });
   });
 }
+
+// Lightbox 展示邏輯
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox-close');
+
+if (lightbox) {
+  document.querySelectorAll('.timeline-img').forEach(img => {
+    img.addEventListener('click', function() {
+      lightbox.style.display = 'flex';
+      // 延遲一點點讓 DOM 更新後再加 class 才能觸發漸變動畫
+      setTimeout(() => lightbox.classList.add('show'), 10);
+      lightboxImg.src = this.src;
+    });
+  });
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('show');
+    // 動畫跑完再把 display 設為 none
+    setTimeout(() => { lightbox.style.display = 'none'; }, 300);
+  };
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+      closeLightbox();
+    }
+  });
+}
