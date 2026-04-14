@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- View Transitions API -->
+    <meta name="view-transition" content="same-origin" />
   </head>
   <body>
     <div class="scroll-progress"></div>
@@ -41,9 +43,9 @@
           <h3>04.24 破冰交流</h3>
           <p>分享羽球比賽經驗，覺察合作歷程的溝通與情緒變化。</p>
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 1.2rem;">
-            <img src="/424-photo1.jpg" alt="羽球交流成果1" class="timeline-img" style="margin-top: 0; object-fit: cover; aspect-ratio: 1/1;">
-            <img src="/424-photo2.jpg" alt="羽球交流成果2" class="timeline-img" style="margin-top: 0; object-fit: cover; aspect-ratio: 1/1;">
-            <img src="/424-photo3.jpg" alt="羽球交流成果3" class="timeline-img" style="margin-top: 0; object-fit: cover; aspect-ratio: 1/1;">
+            <img src="/424-photo1.jpg" alt="羽球交流成果1" class="timeline-img" loading="lazy" style="margin-top: 0; object-fit: cover; aspect-ratio: 1/1;">
+            <img src="/424-photo2.jpg" alt="羽球交流成果2" class="timeline-img" loading="lazy" style="margin-top: 0; object-fit: cover; aspect-ratio: 1/1;">
+            <img src="/424-photo3.jpg" alt="羽球交流成果3" class="timeline-img" loading="lazy" style="margin-top: 0; object-fit: cover; aspect-ratio: 1/1;">
           </div>
         </div>
         <div class="card" id="outcome-0504" style="scroll-margin-top: 100px;">
@@ -69,6 +71,11 @@
       </div>
     </section>
 
+    <!-- Back to Top 按鈕 -->
+    <button id="back-to-top" class="btn btn-primary" aria-label="回到頂部">
+      <i class="ph ph-caret-up" style="margin: 0; font-size: 1.5rem;"></i>
+    </button>
+
     <footer>
       <p>&copy; 2024 高師大南區社會情緒學習與教育創新中心. All Rights Reserved.</p>
     </footer>
@@ -76,7 +83,9 @@
     <!-- Lightbox 燈箱展示區 -->
     <div id="lightbox" class="lightbox">
       <span class="lightbox-close">&times;</span>
+      <button class="lightbox-nav lightbox-prev" aria-label="上一張"><i class="ph ph-caret-left"></i></button>
       <img class="lightbox-content" id="lightbox-img">
+      <button class="lightbox-nav lightbox-next" aria-label="下一張"><i class="ph ph-caret-right"></i></button>
     </div>
 
     <script type="module" src="/main.js"></script>

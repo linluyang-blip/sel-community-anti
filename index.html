@@ -20,6 +20,9 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
+    <!-- View Transitions API -->
+    <meta name="view-transition" content="same-origin" />
+
     <title>SEL 運動共學社群 | 高師大</title>
   </head>
   <body>
@@ -115,7 +118,7 @@
       <h2 class="section-title">社群成員</h2>
       <div class="members-grid">
         <div class="member-card">
-          <img src="/avatar-huang.jpg" alt="黃如昕" class="avatar">
+          <img src="/avatar-huang.jpg" alt="黃如昕" class="avatar" loading="lazy">
           <h4>黃如昕</h4>
           <p>召集人 / 導師</p>
           <small>高餐大附中</small>
@@ -164,7 +167,9 @@
     <!-- Lightbox 燈箱展示區 -->
     <div id="lightbox" class="lightbox">
       <span class="lightbox-close">&times;</span>
+      <button class="lightbox-nav lightbox-prev" aria-label="上一張"><i class="ph ph-caret-left"></i></button>
       <img class="lightbox-content" id="lightbox-img">
+      <button class="lightbox-nav lightbox-next" aria-label="下一張"><i class="ph ph-caret-right"></i></button>
     </div>
 
     <script type="module" src="/main.js"></script>
