@@ -191,3 +191,15 @@ if (lightbox) {
     }
   });
 }
+
+// Splash Screen Logic
+window.addEventListener('load', () => {
+  const splash = document.getElementById('splash-screen');
+  if (splash) {
+    // Show splash for at least 1.5s
+    setTimeout(() => {
+      splash.classList.add('hidden');
+      setTimeout(() => splash.remove(), 600); // 移除 DOM
+    }, 1500);
+  }
+});
