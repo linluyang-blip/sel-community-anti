@@ -20,7 +20,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const animatedElements = document.querySelectorAll('.card, .timeline-item, .member-card');
+  const animatedElements = document.querySelectorAll('.card, .card-placeholder, .timeline-item, .member-card');
   
   animatedElements.forEach((el, index) => {
     el.dataset.delay = (index % 3) * 150; 

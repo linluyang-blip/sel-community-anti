@@ -356,6 +356,103 @@ section {
   border-radius: 8px;
 }
 
+/* Timeline Meta & Badges */
+.timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(43, 122, 120, 0.08);
+  color: var(--primary-color);
+  border: 1px solid rgba(43, 122, 120, 0.15);
+}
+
+.badge i {
+  font-size: 0.9rem;
+}
+
+.badge-speaker {
+  background: rgba(43, 122, 120, 0.08);
+  color: var(--primary-color);
+}
+
+.badge-location {
+  background: rgba(58, 175, 169, 0.08);
+  color: var(--secondary-color);
+  border-color: rgba(58, 175, 169, 0.15);
+}
+
+/* Glassmorphism Placeholder Card for Upcoming Outcomes */
+.card-placeholder {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px dashed rgba(43, 122, 120, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  text-align: center;
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(43, 122, 120, 0.04);
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease-out, box-shadow 0.4s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.card-placeholder.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-placeholder:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(43, 122, 120, 0.1);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.card-placeholder-icon {
+  font-size: 3rem;
+  color: rgba(43, 122, 120, 0.5);
+  margin-bottom: 1.2rem;
+  animation: pulse-icon 2s infinite ease-in-out;
+}
+
+.card-placeholder h3 {
+  color: rgba(23, 37, 42, 0.8);
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.card-placeholder p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  max-width: 250px;
+}
+
+@keyframes pulse-icon {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
 /* Members Section */
 .members-grid {
   display: grid;
