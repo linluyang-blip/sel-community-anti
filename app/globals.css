@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2b7a78;
+  --color-primary-dark: #236563;
+  --color-secondary: #3aafa9;
+  --color-surface: #feffff;
+  --color-ink: #17252a;
+  --color-muted: #5a6b72;
+  --color-card: rgb(255 255 255 / 0.85);
+  --color-glass: rgb(255 255 255 / 0.6);
+
+  --shadow-soft: 0 8px 32px rgb(43 122 120 / 0.08);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  --animate-slide-down: slide-down 0.8s ease-out;
+  --animate-fade-in: fade-in 1s ease-out both;
+  --animate-pulse-icon: pulse-icon 2s infinite ease-in-out;
+  --animate-hit-left: hit-left 0.8s cubic-bezier(0.28, 0.84, 0.42, 1) infinite alternate;
+  --animate-hit-right: hit-right 0.8s cubic-bezier(0.28, 0.84, 0.42, 1) infinite alternate;
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      filter: blur(5px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes pulse-icon {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes hit-left {
+    0% {
+      transform: translateX(-40px) rotate(-20deg) scale(0.9);
+    }
+    100% {
+      transform: translateX(10px) rotate(10deg) scale(1.1);
+    }
+  }
+
+  @keyframes hit-right {
+    0% {
+      transform: translateX(40px) rotate(20deg) scale(0.9);
+    }
+    100% {
+      transform: translateX(-10px) rotate(-10deg) scale(1.1);
+    }
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-noto-sans-tc), var(--font-outfit), sans-serif;
+}
+
+@utility transition-reveal {
+  transition:
+    translate 0.6s var(--ease-spring),
+    scale 0.6s var(--ease-spring),
+    opacity 0.6s ease-out,
+    box-shadow 0.4s;
+}
+
+@utility hero-glow {
+  background:
+    radial-gradient(circle at top right, rgb(58 175 169 / 0.12) 0%, transparent 40%),
+    radial-gradient(circle at bottom left, rgb(43 122 120 / 0.12) 0%, transparent 40%);
+}
