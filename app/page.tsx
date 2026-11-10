@@ -25,7 +25,11 @@ export default function Home() {
           </div>
         }
         badge="國立高雄師範大學南區社會情緒學習與教育創新中心"
-        title="SEL 教師專業發展與實踐"
+        title={
+          <>
+            SEL 教師專業<wbr />發展與實踐
+          </>
+        }
         description="關注教師在高壓教學環境中的情緒調適與人際支持，透過運動體驗與專業講座，提升自我覺察與社會情緒素養。"
       >
         <LinkButton href="#about">了解理念</LinkButton>

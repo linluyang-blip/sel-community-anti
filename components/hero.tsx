@@ -5,7 +5,8 @@ type Props = {
   className: string;
   top?: ReactNode;
   badge: string;
-  title: string;
+  /** 可用 <wbr /> 標出允許斷行的位置；中文只會在空白與 <wbr /> 處換行。 */
+  title: ReactNode;
   description: string;
   children: ReactNode;
 };
@@ -23,10 +24,11 @@ export function Hero({ className, top, badge, title, description, children }: Pr
 
       {top && <Parallax speed={0.1}>{top}</Parallax>}
       <Parallax speed={0.2} className="flex flex-col items-center">
-        <div className="mb-6 animate-slide-down rounded-3xl border border-secondary/30 bg-secondary/15 px-[1.4rem] py-[0.6rem] text-[0.85rem] font-semibold text-primary md:rounded-full md:text-[0.95rem]">
+        {/* text-balance：中文斷行時平均分配兩行，避免最後一兩個字單獨掉到下一行。 */}
+        <div className="mb-6 animate-slide-down text-balance rounded-3xl border border-secondary/30 bg-secondary/15 px-[1.4rem] py-[0.6rem] text-[0.85rem] font-semibold text-primary md:rounded-full md:text-[0.95rem]">
           {badge}
         </div>
-        <h1 className="mb-6 animate-fade-in text-[clamp(2.1rem,5vw,4.5rem)] leading-[1.2] font-bold [animation-delay:200ms]">
+        <h1 className="mb-6 animate-fade-in text-balance break-keep text-[clamp(2.1rem,5vw,4.5rem)] leading-[1.2] font-bold [animation-delay:200ms]">
           {title}
         </h1>
         <p className="mb-6 max-w-[650px] animate-fade-in text-base text-muted [animation-delay:400ms] md:mb-10 md:text-[1.2rem]">

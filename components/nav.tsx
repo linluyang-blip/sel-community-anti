@@ -54,7 +54,7 @@ export function Nav() {
       </button>
 
       {open && (
-        <ul className="absolute inset-x-0 top-full border-b border-glass bg-white/95 px-[5%] py-2 shadow-soft md:hidden">
+        <ul className="absolute inset-x-0 top-full border-b border-glass bg-white px-[5%] py-2 shadow-soft md:hidden">
           {links.map(({ href, label }) => (
             <li key={href}>
               <Link href={href} prefetch={false} onClick={() => setOpen(false)} className="block py-3 font-medium hover:text-primary">
