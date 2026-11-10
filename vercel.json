@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "next build && node -e \"require('fs').rmSync('out/outcomes.html', { force: true })\"",
+  "buildCommand": "node -e \"require('fs').rmSync('public/outcomes.html', { force: true })\" && next build",
   "redirects": [
     { "source": "/", "destination": "/sel-community-anti/", "permanent": false }
   ]
