@@ -116,7 +116,7 @@ export const schedule: ScheduleItem[] = [
   },
   {
     date: "10.16 (五) 14:20-15:10",
-    title: "羽球實作 I：身心放鬆與體能調適",
+    title: "羽球發球機實作 I：身心放鬆與體能調適",
     description: "由教練帶領羽球活動，透過運動促進身心放鬆與壓力調適。活動後進行反思討論，引導分享身體感受與情緒變化，連結自我管理與身心調節能力。",
     outcomeId: "outcome-badminton1",
     speaker: { icon: User, label: "蔡宗凌 主任" },
@@ -198,7 +198,7 @@ export const outcomes: Outcome[] = [
   {
     id: "outcome-badminton1",
     icon: Barbell,
-    title: "10.16 羽球實作 I",
+    title: "10.16 羽球發球機實作 I",
     host: { icon: User, label: "蔡宗凌 主任", place: "高餐大附中 5樓禮堂" },
     summary: "活動已於 10/16 辦理，成果照片整理中！透過運動促進身心放鬆與體能調適，連結自我管理與情緒調節。",
   },
