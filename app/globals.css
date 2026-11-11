@@ -18,6 +18,7 @@
   --animate-pulse-icon: pulse-icon 2s infinite ease-in-out;
   --animate-hit-left: hit-left 0.8s cubic-bezier(0.28, 0.84, 0.42, 1) infinite alternate;
   --animate-hit-right: hit-right 0.8s cubic-bezier(0.28, 0.84, 0.42, 1) infinite alternate;
+  --animate-breathe: breathe 10s ease-in-out infinite;
 
   @keyframes slide-down {
     from {
@@ -68,6 +69,17 @@
     }
     100% {
       transform: translateX(-10px) rotate(-10deg) scale(1.1);
+    }
+  }
+
+  /* 首頁呼吸入口的圓圈：5 秒吸、5 秒吐，與計時器的「平衡呼吸」同節奏。 */
+  @keyframes breathe {
+    0%,
+    100% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.2);
     }
   }
 }
