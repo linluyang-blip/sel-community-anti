@@ -10,6 +10,7 @@ const links = [
   { href: "/#schedule", label: "活動規劃" },
   { href: "/outcomes", label: "成果發表" },
   { href: "/#members", label: "成員介紹" },
+  { href: "/breathing", label: "呼吸放鬆" },
 ];
 
 export function Nav() {
