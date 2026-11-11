@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BackToTop } from "@/components/back-to-top";
+import { BreathingPromo } from "@/components/breathing-promo";
 import { Card, CardIcon } from "@/components/card";
 import { Hero } from "@/components/hero";
 import { Lightbox, Photo } from "@/components/lightbox";
@@ -92,6 +93,10 @@ export default function Outcomes() {
             })}
           </div>
         </Lightbox>
+      </Section>
+
+      <Section id="breathing">
+        <BreathingPromo />
       </Section>
 
       <BackToTop />
